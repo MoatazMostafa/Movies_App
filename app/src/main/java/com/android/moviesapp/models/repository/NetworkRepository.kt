@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NetworkRepository () {
+class NetworkRepository {
     var clientService = ClientService.getClient()
 
     fun getNowPlayingMovies(onFinish: (Boolean,MoviesResponse?,String) -> Unit) {
