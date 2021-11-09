@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MoviesApp</string>
+    <string name="movies_app">Movies App</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="movie_name">Name:</string>
+    <string name="release_date">Release Date:</string>
+    <string name="rate">Rate:</string>
+</resources>
