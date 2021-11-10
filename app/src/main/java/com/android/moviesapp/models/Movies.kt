@@ -2,6 +2,7 @@ package com.android.moviesapp.models
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Movies(
     @SerializedName("adult")
@@ -24,4 +25,4 @@ data class Movies(
     var title: String?,
     @SerializedName("vote_average")
     var voteAverage: Double?,
-)
+):Serializable

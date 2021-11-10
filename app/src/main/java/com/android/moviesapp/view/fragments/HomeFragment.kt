@@ -1,6 +1,7 @@
 package com.android.moviesapp.view.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -18,6 +19,7 @@ import com.android.moviesapp.models.Movies
 import com.android.moviesapp.models.repository.Utils.NOW_PLAYING
 import com.android.moviesapp.models.repository.Utils.TOP_RATED
 import com.android.moviesapp.models.repository.Utils.UPCOMING
+import com.android.moviesapp.view.MovieActivity
 import com.android.moviesapp.view.adapters.MoviesAdapter
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.util.*
@@ -48,10 +50,12 @@ class HomeFragment : Fragment() {
                 showMoviesList(view.home_searchET.text.toString())
             }
         }
-        view.home_searchET.addTextChangedListener (object : TextWatcher {
+        view.home_searchET.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(enterdText: CharSequence, start: Int, before: Int, count: Int) { showMoviesList(enterdText.toString()) }
+            override fun onTextChanged(enterdText: CharSequence, start: Int, before: Int, count: Int) {
+                showMoviesList(enterdText.toString())
+            }
         })
         getMoviesLists()
         return view
@@ -119,8 +123,9 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun movieClicked(movie: Movies) {
-
+        val intent = Intent(activity, MovieActivity::class.java)
+        intent.putExtra("Movie", movie)
+        this.startActivity(intent)
     }
 }

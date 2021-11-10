@@ -11,4 +11,8 @@
     <string name="movie_name">Name:</string>
     <string name="release_date">Release Date:</string>
     <string name="rate">Rate:</string>
+    <string name="please_enter_movie_name">Please Enter Movie Name</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="overview">Overview:</string>
+    <string name="video_title">Video Title</string>
 </resources>
