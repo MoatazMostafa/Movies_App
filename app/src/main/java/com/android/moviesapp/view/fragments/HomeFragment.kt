@@ -68,27 +68,30 @@ class HomeFragment : Fragment() {
                 homeFragmentViewModel.nowPlayingMovies = moviesResponse?.results
                 showMoviesList("")
             } else
-                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT)
+                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT).show()
+            progressBar.visibility = View.GONE
         }
         homeFragmentViewModel.getupComingMovies { isSuccess, moviesResponse, errorMsg ->
             if (isSuccess) {
                 homeFragmentViewModel.upComingMovies = moviesResponse?.results
                 showMoviesList("")
             } else
-                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT)
+                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT).show()
+            progressBar.visibility = View.GONE
         }
         homeFragmentViewModel.getTopRatedMovies { isSuccess, moviesResponse, errorMsg ->
             if (isSuccess) {
                 homeFragmentViewModel.topRatedMovies = moviesResponse?.results
                 showMoviesList("")
             } else
-                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT)
+                Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT).show()
+            progressBar.visibility = View.GONE
         }
     }
 
     private fun showMoviesList(text: String) {
         val filteredList:List<Movies>
-        progressBar.visibility = View.GONE
+
         when (selectedToggleButton){
             NOW_PLAYING ->{
                 if(text.isEmpty())

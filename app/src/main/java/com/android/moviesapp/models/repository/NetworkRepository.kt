@@ -15,7 +15,7 @@ class NetworkRepository {
     var clientService = ClientService.getClient()
 
     fun getNowPlayingMovies(onFinish: (Boolean,MoviesResponse?,String) -> Unit) {
-        clientService.getNowPlayingMovies(API_KEY   ).enqueue(object :
+        clientService.getNowPlayingMovies(API_KEY).enqueue(object :
             Callback<MoviesResponse> {
             override fun onResponse(
                 call: Call<MoviesResponse>,
@@ -28,7 +28,7 @@ class NetworkRepository {
                 }
             }
             override fun onFailure(call: Call<MoviesResponse>, t: Throwable) {
-                onFinish.invoke(false, null,"Connection Error")
+                onFinish.invoke(false, null,"Check internet and try again")
             }
         })
     }
@@ -66,7 +66,7 @@ class NetworkRepository {
                 }
             }
             override fun onFailure(call: Call<MoviesResponse>, t: Throwable) {
-                onFinish.invoke(false, null,"Connection Error")
+                onFinish.invoke(false, null,"Check internet and try again")
             }
         })
     }
@@ -85,7 +85,7 @@ class NetworkRepository {
                 }
             }
             override fun onFailure(call: Call<MoviesResponse>, t: Throwable) {
-                onFinish.invoke(false, null,"Connection Error")
+                onFinish.invoke(false, null,"Check internet and try again")
             }
         })
     }
@@ -104,7 +104,7 @@ class NetworkRepository {
                 }
             }
             override fun onFailure(call: Call<VideoResponse>, t: Throwable) {
-                onFinish.invoke(false, null,"Connection Error")
+                onFinish.invoke(false, null,"Check internet and try again")
             }
         })
     }

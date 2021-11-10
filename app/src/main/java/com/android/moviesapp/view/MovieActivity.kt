@@ -39,6 +39,7 @@ class MovieActivity : YouTubeBaseActivity() {
         movie_overviewTV.text = "${movie_overviewTV.text} ${movieViewModel.movie.overview}"
         Picasso.get().load("${IMAGE_BASE_URL}${movieViewModel.movie.backdropPath}").into(movie_main_imageIV)
         Picasso.get().load("${IMAGE_BASE_URL}${movieViewModel.movie.posterPath}").into(movie_poster_imageIV)
+
         movie_poster_imageIV.setOnClickListener { showPosterDialog() }
         movie_play_buttonIV.setOnClickListener {
             if(onInitializedListener!=null) {
@@ -66,6 +67,9 @@ class MovieActivity : YouTubeBaseActivity() {
                         ) {
                         }
                     }
+                }else{
+                    movie_youTubePlayerView.visibility=View.GONE
+                    movie_play_buttonIV.visibility=View.GONE
                 }
             }
         }
