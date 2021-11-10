@@ -3,7 +3,11 @@
     package="com.android.moviesapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,8 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoviesApp">
-        <activity android:name=".view.MovieActivity"></activity>
-        <activity android:name=".view.HomeActivity" />
+        <activity android:name=".view.MovieActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.HomeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"/>
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

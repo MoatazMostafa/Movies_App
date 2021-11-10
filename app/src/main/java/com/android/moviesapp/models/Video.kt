@@ -10,4 +10,6 @@ data class Video(
     var name: String?,
     @SerializedName("site")
     var site: String?,
+    @SerializedName("type")
+    var type: String?
 )

@@ -1,11 +1,9 @@
 package com.android.moviesapp.viewmodels
 
 import android.app.Application
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import com.android.moviesapp.models.Movies
 import com.android.moviesapp.models.MoviesResponse
-import com.android.moviesapp.models.VideoResponse
 import com.android.moviesapp.models.repository.NetworkRepository
 
 class HomeFragmentViewModel(application: Application) :

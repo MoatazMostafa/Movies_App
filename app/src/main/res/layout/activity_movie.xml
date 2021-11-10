@@ -72,16 +72,39 @@
         app:layout_constraintTop_toBottomOf="@+id/movie_titleTV"
         app:srcCompat="@drawable/ic_movie_icon_app" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/movie_videosRV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/movie_youTubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_overviewTV" />
+
+    <ImageView
+        android:id="@+id/movie_play_buttonIV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_play_circle"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/movie_youTubePlayerView"
+        app:layout_constraintEnd_toEndOf="@+id/movie_youTubePlayerView"
+        app:layout_constraintStart_toStartOf="@+id/movie_youTubePlayerView"
+        app:layout_constraintTop_toTopOf="@+id/movie_youTubePlayerView" />
+
+    <!-- <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/movie_videosRV"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="16dp"
+         android:layout_marginTop="16dp"
+         android:layout_marginEnd="16dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/movie_overviewTV" />-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

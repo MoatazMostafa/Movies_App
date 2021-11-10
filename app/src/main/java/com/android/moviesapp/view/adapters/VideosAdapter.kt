@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.android.moviesapp.R
 import com.android.moviesapp.models.Video
@@ -29,7 +28,7 @@ class VideosAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.videoTitleTV.text = videos?.get(position)?.name
-        holder.itemCL.setOnClickListener {
+        holder.videoTitleTV.setOnClickListener {
             onItemClicked.invoke(videos!![position],holder.videoVV) }
     }
 
@@ -40,7 +39,6 @@ class VideosAdapter(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemCL:ConstraintLayout = itemView.findViewById(R.id.item_video)
         val videoTitleTV: TextView = itemView.findViewById(R.id.item_video_titleTV)
         val videoVV: YouTubePlayerView = itemView.findViewById(R.id.item_videoVV)
 
