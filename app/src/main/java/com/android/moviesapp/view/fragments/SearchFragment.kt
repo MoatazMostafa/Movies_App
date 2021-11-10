@@ -31,13 +31,14 @@ class SearchFragment : Fragment() {
             if(view.searchET.text!!.isEmpty()){
                 view.search_textInputLayout.error = getString(R.string.please_enter_movie_name)
             }else {
+                view.search_textInputLayout.error = null
                 searchFragmentViewModel.getMoviesByName(view.searchET.text.toString()){ isSuccess, moviesResponse, errorMsg ->
                     if (isSuccess) {
                         view.search_moviesRV.adapter = MoviesAdapter(moviesResponse?.results){
                             movieClicked(it)
                         }
                     } else
-                        Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT)
+                        Toast.makeText(activity, errorMsg, Toast.LENGTH_SHORT).show()
 
                 }
             }
