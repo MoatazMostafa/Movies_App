@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
         view.home_button_toggle_group.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 when (checkedId) {
+                    R.id.home_now_playingBTN -> selectedToggleButton = NOW_PLAYING
                     R.id.home_upcomingBTN -> selectedToggleButton = UPCOMING
                     R.id.home_top_ratedBTN -> selectedToggleButton = TOP_RATED
                 }
